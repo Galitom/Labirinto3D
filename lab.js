@@ -2,7 +2,18 @@
 Math.nextInt = function (number) {
 	return Math.floor(Math.random() * number);
 }
+Math.nextInt1 = function () {
+	randomNumber =Math.floor(Math.random() * 1000) ;
 
+        if (randomNumber < 1) {
+            // 20% di probabilità di ottenere 4 o 5
+            return Math.floor(Math.random() * 2) + 4;
+        } else {
+            // 80% di probabilità di ottenere un numero tra 0 e 3
+            return Math.floor(Math.random() * 4) ;
+        }
+	 Math.floor(Math.random() * number);
+}
 /* Define the bit masks */
 var WALL_ABOVE = 1;
 var WALL_BELOW = 2;
@@ -18,11 +29,11 @@ function Maze(lenx, leny, lenz, cell_width) {
 	if (lenx)
 		this.lenx = lenx;
 	else
-		this.lenx = 9;
+		this.lenx = 30;
 	if (leny)
 		this.leny = leny;
 	else
-		this.leny = 9;
+		this.leny = 30;
 	if (lenz)
 		this.lenz = lenz;
 	else
@@ -97,7 +108,9 @@ function Maze(lenx, leny, lenz, cell_width) {
 			var passBool = 0;
 			while (passBool == 0)
 			{
-				d = Math.nextInt(6);
+				
+				d = Math.nextInt1(6);	
+				
 				x_dx = x + dx[d];
 				y_dy = y + dy[d];
 				z_dz = z + dz[d];
