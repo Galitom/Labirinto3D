@@ -3,7 +3,7 @@ Math.nextInt = function (number) {
 	return Math.floor(Math.random() * number);
 }
 Math.nextInt1 = function () {
-	randomNumber =Math.floor(Math.random() * 1000) ;
+	randomNumber =Math.floor(Math.random() * 10) ;
 
         if (randomNumber < 1) {
             // 20% di probabilità di ottenere 4 o 5
@@ -37,7 +37,7 @@ function Maze(lenx, leny, lenz, cell_width) {
 	if (lenz)
 		this.lenz = lenz;
 	else
-		this.lenz = 4;
+		this.lenz = 4
 	if (cell_width)
 		this.cell_width = cell_width;
 	else
